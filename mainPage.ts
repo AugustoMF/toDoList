@@ -1,7 +1,7 @@
 interface Task {
     name: string;
     status: 'Pending' | 'Completed';
-    priority: 'Low' | 'Medium' | 'High';
+    priority: 'High' | 'Medium' | 'Low';
     type: 'Work' | 'Personal' | 'Others';
 }
 
@@ -79,7 +79,7 @@ function sortTasks(): void {
     if (sortType === 'type') {
         tasks.sort((a, b) => a.type.localeCompare(b.type));
     } else if (sortType === 'priority') {
-        const priorityOrder: Record<Task['priority'], number> = { 'Low': 1, 'Medium': 2, 'High': 3 };
+        const priorityOrder: Record<Task['priority'], number> = { 'High': 1, 'Medium': 2, 'Low': 3 };
         tasks.sort((a, b) => priorityOrder[a.priority] - priorityOrder[b.priority]);
     }
 
