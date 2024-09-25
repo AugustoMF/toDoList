@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .task-input {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .task-input input, select {
+            width: 20%;
+            padding: 10px;
+        }
+        .task-input button {
+            padding: 10px;
+        }
+        .task-list {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .task-list th, .task-list td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        .task-list th {
+            background-color: #f4f4f4;
+        }
+        .task-list tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .task-list button {
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+        
+        <!-- Form for adding tasks -->
+        <div class="task-input">
+            <input type="text" id="taskName" placeholder="Task Name">
+            <select id="taskPriority">
+                <option value="Low">Low Priority</option>
+                <option value="Medium">Medium Priority</option>
+                <option value="High">High Priority</option>
+            </select>
+            <select id="taskType">
+                <option value="Work">Work</option>
+                <option value="Personal">Personal</option>
+                <option value="Others">Others</option>
+            </select>
+            <button onclick="addTask()">Add Task</button>
+        </div>
+        
+        <!-- Sorting options -->
+        <div class="sort-options">
+            <label for="sortType">Sort by:</label>
+            <select id="sortType" onchange="sortTasks()">
+                <option value="type">Type</option>
+                <option value="priority">Priority</option>
+            </select>
+        </div>
+
+        <!-- Task list -->
+        <table class="task-list">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Status</th>
+                    <th>Priority</th>
+                    <th>Type</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="taskTable">
+                <!-- Tasks will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="mainPage.js"></script>
+</body>
+</html>

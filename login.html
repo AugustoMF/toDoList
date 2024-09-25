@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #778899;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            font-family: Arial, 50 sans-serif;
+            text-align: center;
+            margin-top: 30px;
+            color: #00BFFF;
+        }
+
+        form {
+            background-color: #F8F8FF;
+            max-width: 400px;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            background-color: #ececec;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input[type="submit"] {
+            width: 48%;
+            background-color: #808080;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ffffff;
+            color: #000;
+        }
+
+        input[type="submit"]:last-child {
+            background-color: #2196F3;
+        }
+
+        input[type="submit"]:last-child:hover {
+            background-color: #1e88e5;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Login</h2>
+    <form method="GET" action="/login">
+        <label for="login">Login:</label>
+        <input type="text" id="login" name="login" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <div class="button-container">
+            <input type="submit" value="Login">
+            <input type="submit" value="Create account">
+        </div>
+    </form>
+</body>
+</html>
